@@ -88,6 +88,31 @@ body {
     height: auto;
 }
 
+
+/* configuração dos cards */
+.mainCartao{
+    background-color: transparent;
+    border: none;
+}
+
+#divCard{
+    
+}
+
+.img-mainCartao{
+    width: 288px;
+    height: 190.5px;
+	-webkit-transform: scale(1);
+	transform: scale(1);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+
+.img-mainCartao:hover{
+	-webkit-transform: scale(1.2);
+	transform: scale(1.2);
+}
+
 .footer{
     position: relative;
     text-align: center;
