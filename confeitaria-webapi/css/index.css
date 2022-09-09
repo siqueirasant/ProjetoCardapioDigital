@@ -88,6 +88,75 @@ body {
     height: auto;
 }
 
+
+/* configuração dos cards */
+.mainCartao{
+    background-color: transparent;
+    border: none;
+}
+
+#divCard{
+}
+
+
+#divImgLimitador{
+    width: 288px;
+    height: 190.5px;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.img-mainCartao{
+    
+	-webkit-transform: scale(1);
+	transform: scale(1);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+    
+}
+
+.img-mainCartao:hover{
+	
+    -webkit-transform: scale(1.2);
+	transform: scale(1.2);
+}
+
+a + h2 {
+    position: absolute;
+    top: 110px;
+    color: #ffd9cc;
+    font-weight: bold;
+    letter-spacing: 2px;
+
+}
+
+#cardImgLink{
+    text-decoration: none;
+    background-color: transparent;
+}
+
+.btnCard{
+    top: 150px;
+    width: 90px;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    background-color: #ffd9cc;
+    color: #391313;
+    font-size: 9pt;
+    font-weight: bold;
+    border: none;
+
+}
+
+/* Adiciona a classe active para ressaltar a página atual */
+.btnCard:hover{
+    background-color: #640a0a;
+    color: #ffd9cc;
+}
+
 .footer{
     position: relative;
     text-align: center;
