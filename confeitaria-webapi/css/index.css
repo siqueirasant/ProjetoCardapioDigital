@@ -53,23 +53,61 @@ html, body {height:auto;}
     display: none;
 }
 
+#menuGeralId{
+    
+    display: flex;
+    justify-content: space-between;
+}
+
+#aEntreResponsivo{
+    display: none;
+}
+
+#aCadastreResponsivo{
+    display: none;
+}
+
 /* Quando a largura da tela for menor que 600px, esconde todos os links, exceto o primeiro ("Início"). Mostra o link que abre e fecha o menuGeral (.icon) */
-@media screen and (max-width: 600px) {
-    .menuGeral a:not(:first-child) {display: none;}
+@media screen and (max-width: 758px) {
+    .menuGeral a:not(:first-child) {
+        display: none;
+    }
     .menuGeral a.icon {
       float: right;
       display: block;
+    }
+    #aEntreResponsivo{
+        display: none;
+    }
+    
+    #aCadastreResponsivo{
+        display: none;
+    }
+    div#loginArea{
+        display: none;
     }
 }
 
 /* A classe "responsiva" é adicionada ao menuGeral com Javascript quando o usuário clica no ícone.
 Essa classe faz o menuGeral se ajustar em telas menores (mostra os links verticalmente e vez de horizontalmente) */
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 758px) {
     .menuGeral.responsive {position: relative;}
     .menuGeral.responsive a.icon {
       position: absolute;
       right: 0;
       top: 0;
+    }
+
+    #menuGeralId{
+        display: block;
+    }
+
+    .menuGeral.responsive #aEntreResponsivo{
+        display: block;
+    }
+    
+    .menuGeral.responsive #aCadastreResponsivo{
+        display: block;
     }
     .menuGeral.responsive a {
       float: none;
@@ -95,8 +133,6 @@ body {
     border: none;
 }
 
-#divCard{
-}
 
 
 #divImgLimitador{
@@ -107,18 +143,17 @@ body {
 }
 
 .img-mainCartao{
-    
 	-webkit-transform: scale(1);
 	transform: scale(1);
 	-webkit-transition: .3s ease-in-out;
 	transition: .3s ease-in-out;
-    
+    box-shadow: inset 10px 10px 50px #fff;
 }
 
 .img-mainCartao:hover{
 	
-    -webkit-transform: scale(1.2);
-	transform: scale(1.2);
+    -webkit-transform: scale(1.1);
+	transform: scale(1.1);
 }
 
 a + h2 {
@@ -127,6 +162,8 @@ a + h2 {
     color: #ffd9cc;
     font-weight: bold;
     letter-spacing: 2px;
+    -webkit-user-select: none;
+    user-select: none;
 
 }
 

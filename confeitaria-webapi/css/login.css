@@ -1,0 +1,123 @@
+
+#imgLogo{
+    width: 250px;
+    height: 204px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 10px;
+}
+
+body {
+    background-color: #ffd9cc;
+}
+
+#divCentral{
+    margin: 20px auto;
+    max-width: 550px;
+    height: 550px;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.25);
+    box-shadow: 5px 5px 20px black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 35px 20px;
+}
+
+#login{
+    width: 75%;
+}
+
+#divEmail{
+    margin-top: 40px;
+}
+
+
+#divPassword{
+    margin-top: 10px;
+}
+#divCheckBox{
+    margin-top: 10px;
+}
+
+#btnLogar{
+    width: 70px;
+    height: 35px;
+    background-color: #391313;
+    border: none;
+    border-radius: 5px;
+    color: #ffd9cc;
+    display: flex;
+    align-items: center;
+    justify-content: center;    
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 15px;
+    transition: 0.25s;
+    
+}
+
+#btnLogar:hover{
+    background-color: #ffd9cc;
+    color: #391313;
+    border-color: #391313 0.1;
+    border: 0.1px solid;
+}
+
+#bottom{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 40px;
+}
+
+#linkCadastre{
+    display: block;
+}
+#linkCadastreHover{
+    display: none;
+}
+
+#bottom a{
+    font-size: 10pt;
+    text-decoration: none;
+    color: #391313;
+}
+
+#divCadastre{
+    width: 200px;
+    display: flex;
+    justify-content: center;
+}
+
+@media (max-width: 765px) {
+    #divCentral{
+        max-width: 500px;
+    }
+}
+
+@media (max-width: 570px) {
+    #divCentral{
+        max-width: 450px;
+    }
+}
+
+@media (max-width: 480px) {
+    #divCentral{
+        max-width: 375px;
+    }
+}
+
+@media (max-width: 400px) {
+    #divCentral{
+        max-width: 100%;
+    }
+    #bottom{
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 40px;
+    }
+}

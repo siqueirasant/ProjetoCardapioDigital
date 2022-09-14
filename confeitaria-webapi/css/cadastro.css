@@ -1,0 +1,146 @@
+
+#imgLogo{
+    width: 250px;
+    height: 204px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 10px;
+}
+
+body {
+    background-color: #ffd9cc;
+}
+
+#divCentral{
+    margin: 20px auto;
+    max-width: 800px;
+    height: 600px;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.25);
+    box-shadow: 5px 5px 20px black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 35px 20px;
+}
+
+#registerForm{
+    width: 90%;
+}
+
+#registerCentral{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#registerCentral div{
+    margin-top: 10px;
+}
+
+#registerLeftSide{
+    width: 45%;
+}
+
+#registerRightSide{
+    width: 45%;
+}
+
+input[type='number'] {
+    -moz-appearance:textfield;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+#btnLogar{
+    width: 90px;
+    height: 35px;
+    background-color: #391313;
+    border: none;
+    border-radius: 5px;
+    color: #ffd9cc;
+    display: flex;
+    align-items: center;
+    justify-content: center;    
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 15px;
+    transition: 0.25s;
+    
+}
+
+#btnLogar:hover{
+    background-color: #ffd9cc;
+    color: #391313;
+    border-color: #391313 0.1;
+    border: 0.1px solid;
+}
+
+#bottom{
+    margin-top: 20px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#linkLogin{
+    display: block;
+}
+#linkLoginHover{
+    display: none;
+}
+
+#bottom a{
+    font-size: 10pt;
+    text-decoration: none;
+    color: #391313;
+}
+
+#divLogin{
+    width: 150px;
+    display: flex;
+    justify-content: center;
+}
+
+@media (max-width: 865px) {
+    #divCentral{
+        max-width: 600px;
+    }
+}
+
+@media (max-width: 670px) {
+    #divCentral{
+        max-width: 550px;
+    }
+}
+
+@media (max-width: 580px) {
+    #divCentral{
+        max-width: 375px;
+        height: auto;
+    }
+    #registerCentral{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    #registerLeftSide{
+        width: 90%;
+    }
+    
+    #registerRightSide{
+        width: 90%;
+    }
+}
+
+@media (max-width: 500px) {
+    #divCentral{
+        max-width: 100%;
+    }
+}
