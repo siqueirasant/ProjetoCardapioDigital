@@ -13,6 +13,10 @@ body {
 }
 
 #divCentral{
+    width: 90%;
+}
+
+#registerForm{
     margin: 20px auto;
     max-width: 800px;
     height: 600px;
@@ -23,10 +27,6 @@ body {
     justify-content: center;
     align-items: center;
     padding: 35px 20px;
-}
-
-#registerForm{
-    width: 90%;
 }
 
 #registerCentral{

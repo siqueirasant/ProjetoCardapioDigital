@@ -1,3 +1,21 @@
+const form = document.getElementById('registerForm')
+
+// alert(form)
+
+form.addEventListener('submit', function (ev){
+    const password = document.getElementById("inputSenha")
+    const confirmPassword = document.getElementById("inputConfirmSenha")
+    
+    if(password.value == confirmPassword.value) {
+        return true
+        
+    }else{
+        ev.preventDefault()
+        alert(`As senhas não estão iguais. Verifique Por favor!!`)
+        return false
+    }
+})
+
 function logar(){
     let aPergunta = document.getElementById("linkLogin")
     aPergunta.style.display="none"
@@ -73,3 +91,5 @@ else {
     limpa_formulário_cep();
 }
 };
+
+
