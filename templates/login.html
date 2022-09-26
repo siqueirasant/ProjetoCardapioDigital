@@ -27,6 +27,15 @@
             </a>
         </div>
     </header>
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <ul id="messages" class="list-unstyled">
+        {% for message in messages %}
+        <li class="alert alert-success">{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    {% endwith %}
     <div class="" id="divCentral">
         <form method="POST" id="login" action="">
             <h1>Log-in</h1>
