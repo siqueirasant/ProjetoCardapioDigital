@@ -49,28 +49,31 @@ def encomenda():
 
 @app.route("/cadastro.html", methods=["GET", "POST"])
 def cadastrar_cliente():
-    
-    nome = request.form['inputNome']
-    logradouro = request.form['inputRua']
-    nro = request.form['inputNumero']
-    bairro = request.form['inputBairro']
-    cidade = request.form['inputCidade']
-    cep = request.form['inputCEP']
-    telefone = request.form['inputTelefone']
-    email = request.form['inputEmail']
-    senha = request.form['inputSenha']
+    if request.method == "POST":
 
-    cadastro = TbCadastro.query.filter_by(nome = nome).first()
-    if cadastro:
-        flash('Usuario já cadastrado')
-        return render_template("cadastro.html")
+        nome = request.form['inputNome']
+        logradouro = request.form['inputRua']
+        nro = request.form['inputNumero']
+        bairro = request.form['inputBairro']
+        cidade = request.form['inputCidade']
+        cep = request.form['inputCEP']
+        telefone = request.form['inputTelefone']
+        email = request.form['inputEmail']
+        senha = request.form['inputSenha']
+
+        cadastro = TbCadastro.query.filter_by(nome = nome).first()
+        if cadastro:
+            flash('Usuario já cadastrado')
+            return render_template("cadastro.html")
    
-    novoCadastro = TbCadastro(nome = nome, logradouro = logradouro,
-    nro = nro, bairro = bairro, cidade = cidade, cep = cep, 
-    telefone = telefone, email = email, senha = senha)
-    db.session.add(novoCadastro)
-    db.session.commit()
-    flash("Cadastro realizado com sucesso!")
+        novoCadastro = TbCadastro(nome = nome, logradouro = logradouro,
+        nro = nro, bairro = bairro, cidade = cidade, cep = cep, 
+        telefone = telefone, email = email, senha = senha)
+        db.session.add(novoCadastro)
+        db.session.commit()
+        flash("Cadastro realizado com sucesso!")
+        return render_template("cadastro.html")
+        
     return render_template("cadastro.html")
 
 
