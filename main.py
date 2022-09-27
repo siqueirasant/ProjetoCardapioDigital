@@ -1,4 +1,5 @@
 from funcoes_uteis import Funcoes
+from Banco import Banco
 
 from flask import Flask, request, render_template, flash
 from flask_sqlalchemy import SQLAlchemy
@@ -7,6 +8,11 @@ funcoes = Funcoes()
 
 
 app = Flask(__name__)
+
+#conectando banco
+Banco().iniciaBanco()
+
+
 app.secret_key = 'blablabla'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+mysqlconnector://root:root@localhost/cardapio'
 db = SQLAlchemy(app)
@@ -73,7 +79,7 @@ def cadastrar_cliente():
         db.session.commit()
         flash("Cadastro realizado com sucesso!")
         return render_template("cadastro.html")
-        
+
     return render_template("cadastro.html")
 
 
