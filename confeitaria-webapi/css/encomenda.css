@@ -67,8 +67,8 @@ html, body {height:auto;}
     display: none;
 }
 
-/* Quando a largura da tela for menor que 600px, esconde todos os links, exceto o primeiro ("Início"). Mostra o link que abre e fecha o menuGeral (.icon) */
-@media screen and (max-width: 758px) {
+/* Quando a largura da tela for diminuída, esconde todos os links, exceto o primeiro ("Início"). Mostra o link que abre e fecha o menuGeral (.icon) */
+@media screen and (max-width: 870px) {
     .menuGeral a:not(:first-child) {
         display: none;
     }
@@ -90,7 +90,7 @@ html, body {height:auto;}
 
 /* A classe "responsiva" é adicionada ao menuGeral com Javascript quando o usuário clica no ícone.
 Essa classe faz o menuGeral se ajustar em telas menores (mostra os links verticalmente e vez de horizontalmente) */
-@media screen and (max-width: 758px) {
+@media screen and (max-width: 870px) {
     .menuGeral.responsive {position: relative;}
     .menuGeral.responsive a.icon {
       position: absolute;
