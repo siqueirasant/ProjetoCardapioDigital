@@ -44,13 +44,6 @@ class Banco:
             PRIMARY KEY (`id`)
             ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;''')
 
-        TABLES['Login'] = ('''
-            CREATE TABLE `login` (
-            `email` varchar(20) NOT NULL,
-            `senha` varchar(100) NOT NULL,
-            PRIMARY KEY (`email`)
-            ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;''')
-
         for tabela_nome in TABLES:
             tabela_sql = TABLES[tabela_nome]
             try:
@@ -69,3 +62,4 @@ class Banco:
 
         cursor.close()
         conn.close()
+Banco()       

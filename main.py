@@ -1,7 +1,7 @@
 from funcoes_uteis import Funcoes
 from Banco import Banco
 
-from flask import Flask, request, render_template, flash
+from flask import Flask, request, render_template, flash, redirect
 from flask_sqlalchemy import SQLAlchemy
 
 funcoes = Funcoes()
@@ -10,7 +10,7 @@ funcoes = Funcoes()
 app = Flask(__name__)
 
 #conectando banco
-Banco().iniciaBanco()
+#Banco().iniciaBanco()
 
 
 app.secret_key = 'blablabla'
@@ -28,10 +28,6 @@ class TbCadastro (db.Model):
     telefone = db.Column(db.String, nullable = False)
     email = db.Column(db.String, nullable = False)
     senha = db.Column(db.String, nullable = False)
-
-class Login(db.Model):
-    email = db.Column(db.String(20), primary_key = True)
-    senha = nome = db.Column(db.String, nullable = False)
 
 @app.route("/")
 def home():
@@ -67,7 +63,7 @@ def cadastrar_cliente():
         email = request.form['inputEmail']
         senha = request.form['inputSenha']
 
-        cadastro = TbCadastro.query.filter_by(nome = nome).first()
+        cadastro = TbCadastro.query.filter_by(email = email).first()
         if cadastro:
             flash('Usuario já cadastrado')
             return render_template("cadastro.html")
@@ -86,18 +82,22 @@ def cadastrar_cliente():
 
 @app.route("/login.html", methods=['GET', 'POST'])
 def login():
-    
-    email = request.form['inputEmail']
-    senha = request.form['inputSenha']
-    usuario = TbCadastro.query.filter_by(email = email, senha = senha).first()
-    if usuario:
-        flash("Login realizado com sucesso")
-        return render_template("login.html")
- 
-    flash("Senha ou email incorretos")
     return render_template("login.html")
 
 
+@app.route("/autenticar", methods=['POST'])
+def autenticar ():
+    email = request.form['inputEmail']
+    senha = request.form['inputSenha']
+    usuario = TbCadastro.query.filter_by(senha = senha, email = email).first()
+    db.session.commit()
+    if usuario:
+        flash("Login realizado com sucesso")
+        return redirect("/login.html")
+    
+    flash("Senha ou email incorretos")
+    return redirect("/login.html")
+    
 """
 @app.route("/atualizar", methods=["PUT"])
 def atualizar_dados_cliente():

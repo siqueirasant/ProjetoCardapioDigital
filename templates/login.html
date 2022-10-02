@@ -37,7 +37,7 @@
     {% endif %}
     {% endwith %}
     <div class="" id="divCentral">
-        <form method="POST" id="login" action="">
+        <form method="POST" id="login" action="{{ url_for('autenticar') }}">
             <h1>Log-in</h1>
             <div id="divEmail">
                 <label for="exampleInputEmail1" class="form-label">Email</label>
