@@ -107,19 +107,19 @@ input::-webkit-inner-spin-button {
 }
 
 @media (max-width: 865px) {
-    #divCentral{
+    #registerForm{
         max-width: 600px;
     }
 }
 
 @media (max-width: 670px) {
-    #divCentral{
+    #registerForm{
         max-width: 550px;
     }
 }
-
+ 
 @media (max-width: 580px) {
-    #divCentral{
+    #registerForm{
         max-width: 375px;
         height: auto;
     }

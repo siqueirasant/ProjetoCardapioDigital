@@ -4,6 +4,7 @@ body {
     background-color: #ffd9cc;
 }
 
+
 html, body {height:auto;}
 
 .geral{
@@ -72,6 +73,23 @@ html, body {height:auto;}
 }
 
 
+.carouselGeral{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* As medidas máximas do carousel precisam ser iguais as medidas máximas das imagens dele */
+.carousel{
+    max-width: 900px;
+    max-height: 595px;
+    padding-top: 30px;
+}
+
+.carousel-item{
+    max-width: 900px;
+    max-height: 595px;
+}
 
 .img_map{
     width: 90%;
@@ -147,29 +165,6 @@ a + h2 {
     color: #ffd9cc;
 }
 
-#carrinhoDivIcon{
-    width: 80px;
-    height: 80px;
-    background-color: rgb(255, 189, 189);
-    position: fixed;
-    right: 15%;
-    top: 710px;
-    border-radius: 100px;
-    z-index: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: 0.3s;
-}
-
-#carrinhoDivIcon:hover{
-    transform: scale(1.1);
-}
-
-#imgCarrinho{
-    width: 43px;
-    height: 43px;
-}
 
 .footer{
     position: relative;
@@ -179,35 +174,6 @@ a + h2 {
     padding-top: 50px;
 }
 
-
-.carouselGeral{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-/* As medidas máximas do carousel precisam ser iguais as medidas máximas das imagens dele */
-.carousel{
-    max-width: 900px;
-    max-height: 595px;
-    padding-top: 30px;
-}
-
-.carousel-item{
-    max-width: 900px;
-    max-height: 595px;
-}
-
-@media screen and (max-width: 1560px) {
-    #carrinhoDivIcon{
-        width: 70px;
-        height: 70px;
-        right: 10%;
-    }
-    #carrinhoDivIcon:hover{
-        transform: scale(1.2);
-    }
-}
 
 /* Quando a largura da tela for menor que 600px, esconde todos os links, exceto o primeiro ("Início"). Mostra o link que abre e fecha o menuGeral (.icon) */
 @media screen and (max-width: 758px) {
@@ -252,10 +218,5 @@ a + h2 {
       display: block;
       text-align: left;
     }
-    
-    #carrinhoDiv{
-        width: 70px;
-        height: 70px;
-        right: 10%;
-    }
+
 }

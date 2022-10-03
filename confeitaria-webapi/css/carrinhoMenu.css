@@ -1,0 +1,91 @@
+@charset "utf-8";
+
+#carrinhoDivIcon{
+    width: 80px;
+    height: 80px;
+    background-color: rgb(255, 189, 189);
+    position: fixed;
+    right: 15%;
+    top: 85%;
+    bottom: 10%;
+    border-radius: 100px;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s;
+}
+
+#iframeCarrinho{
+    display: none;
+    width: 90%;
+    height: 85%;
+    transition: 1s;
+    overflow: hidden;
+}
+
+.vertical-scroll::-webkit-scrollbar{
+    display: none;
+}
+
+#imgCarrinho{
+    transition: 0.3s;
+    width: 43px;
+    height: 43px;
+}
+
+.btnCarrinhoBottom{
+    display: none;
+    margin-top: 10px;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffd9cc;
+    color: #391313;
+    font-size: 9pt;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.btnCarrinhoBottom:hover{
+    background-color: #640a0a;
+    color: #ffd9cc;
+}
+
+#voltarCarrinho{
+    width: 90px;
+    height: 25px;
+}
+
+#finalizarCarrinho{
+    width: 120px;
+    height: 25px;
+}
+
+#divbtnBottom{
+    width: 400px;
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+}
+
+
+
+@media screen and (max-width: 1560px) {
+    #carrinhoDivIcon{
+        width: 70px;
+        height: 70px;
+        right: 10%;
+    }
+    #carrinhoDivIcon:hover{
+        transform: scale(1.2);
+    }
+}
+
+@media screen and (max-width: 700px) {
+    #divbtnBottom{
+        width: 300px;
+    }
+}
