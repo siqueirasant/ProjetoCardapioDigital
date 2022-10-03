@@ -128,59 +128,148 @@ body {
     padding-top: 50px;
 }
 
-.whatsapp_logo{
-    width: 90%;
-    max-width: 57px;
-    height: auto;
-    padding-bottom: 0%;
-    padding-top: 3%;
-    vertical-align:bottom;
+.containerDivCentral {
+    width: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+
+#divCentral{
+    width: 70%;
+    max-width: 100%;
 }
 
-.instagram_logo{
-    width: 90%;
-    max-width: 50px;
-    height: auto;
-    padding-bottom: 0%;
-    vertical-align:top;
+#registerCentral{
+    display: flex;
+    justify-content: space-evenly;
 }
 
-.facebook_logo{
-    width: 90%;
-    max-width: 50px;
-    height: auto;
-    padding-bottom: 0%;
-    vertical-align:top;
+#registerCentral div{
+    margin-top: 10px;
 }
 
-.info_logos{
-    display:inline-block;
-    padding-left: 1%;
-    padding-top: 1%;
-    font-family: Arial, Helvetica, sans-serif;
+#registerLeftSide{
+    width: 45%;
 }
 
-.social_links{
-    text-decoration: unset;
+#registerRightSide{
+    width: 45%;
 }
 
-
-
-.sobre{
-    padding-top: 2%;
+input[type='number'] {
+    -moz-appearance:textfield;
 }
 
-/* Create two equal columns that floats next to each other */
-.column {
-    float: left;
-    width: 33%;
-    padding: 30px;
-    height: 300px; /* Should be removed. Only for demonstration */
-  }
-  
-  /* Clear floats after the columns */
-  .row:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+#btnLogar{
+    width: 90px;
+    height: 35px;
+    background-color: #391313;
+    border: none;
+    border-radius: 5px;
+    color: #ffd9cc;
+    display: flex;
+    align-items: center;
+    justify-content: center;    
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 15px;
+    transition: 0.25s;
+    
+}
+
+#btnLogar:hover{
+    background-color: #ffd9cc;
+    color: #391313;
+    border-color: #391313 0.1;
+    border: 0.1px solid;
+}
+
+@media (max-width: 865px) {
+    #bottom{
+        margin-top: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 89%;
+        margin-left: 5%;
+        padding-left: 0%;
+        padding-right: 0%;
+    }
+}
+
+@media (min-width: 866px) {
+    #bottom{
+        margin-top: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 89%;
+        margin-left: 5%;
+        padding-left: 30%;
+        padding-right: 30%;
+    }
+}
+
+#linkLogin{
+    display: block;
+}
+#linkLoginHover{
+    display: none;
+}
+
+#bottom a{
+    font-size: 10pt;
+    text-decoration: none;
+    color: #391313;
+}
+
+#divLogin{
+    width: 150px;
+    display: flex;
+    justify-content: center;
+}
+
+@media (max-width: 865px) {
+    #divCentral{
+        max-width: 600px;
+    }
+}
+
+@media (max-width: 670px) {
+    #divCentral{
+        max-width: 550px;
+    }
+}
+
+@media (max-width: 580px) {
+    #divCentral{
+        max-width: 375px;
+        height: auto;
+    }
+    #registerCentral{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    #registerLeftSide{
+        width: 90%;
+    }
+    
+    #registerRightSide{
+        width: 90%;
+    }
+}
+
+@media (max-width: 500px) {
+    #divCentral{
+        max-width: 100%;
+    }
+}

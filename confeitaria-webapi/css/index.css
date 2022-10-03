@@ -175,8 +175,37 @@ a + h2 {
 }
 
 
-/* Quando a largura da tela for menor que 600px, esconde todos os links, exceto o primeiro ("Início"). Mostra o link que abre e fecha o menuGeral (.icon) */
-@media screen and (max-width: 758px) {
+.carouselGeral{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* As medidas máximas do carousel precisam ser iguais as medidas máximas das imagens dele */
+.carousel{
+    max-width: 900px;
+    max-height: 595px;
+    padding-top: 30px;
+}
+
+.carousel-item{
+    max-width: 900px;
+    max-height: 595px;
+}
+
+@media screen and (max-width: 1560px) {
+    #carrinhoDivIcon{
+        width: 70px;
+        height: 70px;
+        right: 10%;
+    }
+    #carrinhoDivIcon:hover{
+        transform: scale(1.2);
+    }
+}
+
+/* Quando a largura da tela for diminuída, esconde todos os links, exceto o primeiro ("Início"). Mostra o link que abre e fecha o menuGeral (.icon) */
+@media screen and (max-width: 870px) {
     .menuGeral a:not(:first-child) {
         display: none;
     }
