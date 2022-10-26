@@ -62,4 +62,4 @@ class Banco:
 
         cursor.close()
         conn.close()
-Banco()       
+#Banco().iniciaBanco()       

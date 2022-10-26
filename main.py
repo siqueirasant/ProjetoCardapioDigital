@@ -9,10 +9,6 @@ funcoes = Funcoes()
 
 app = Flask(__name__)
 
-#conectando banco
-#Banco().iniciaBanco()
-
-
 app.secret_key = 'blablabla'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+mysqlconnector://root:root@localhost/cardapio'
 db = SQLAlchemy(app)
