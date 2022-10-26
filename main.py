@@ -1,29 +1,5 @@
-from funcoes_uteis import Funcoes
-from Banco import Banco
-
 from flask import Flask, request, render_template, flash, redirect
-from flask_sqlalchemy import SQLAlchemy
-
-funcoes = Funcoes()
-
-
-app = Flask(__name__)
-
-app.secret_key = 'blablabla'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+mysqlconnector://root:root@localhost/cardapio'
-db = SQLAlchemy(app)
-
-class TbCadastro (db.Model):
-    id = db.Column(db.Integer, primary_key = True, autoincrement=True)
-    nome = db.Column(db.String, nullable = False)
-    logradouro = db.Column(db.String, nullable = False)
-    nro = db.Column(db.Integer, nullable = False)
-    bairro = db.Column(db.String, nullable = False)
-    cidade = db.Column(db.String, nullable = False)
-    cep = db.Column(db.String, nullable = False)
-    telefone = db.Column(db.String, nullable = False)
-    email = db.Column(db.String, nullable = False)
-    senha = db.Column(db.String, nullable = False)
+from cadastros import app, db, TbCadastro
 
 @app.route("/")
 def home():
@@ -59,21 +35,22 @@ def cadastrar_cliente():
         email = request.form['inputEmail']
         senha = request.form['inputSenha']
 
-        cadastro = TbCadastro.query.filter_by(email = email).first()
+        with app.app_context():
+            cadastro = TbCadastro.query.filter_by(email = email).first()
         if cadastro:
             flash('Usuario já cadastrado')
             return render_template("cadastro.html")
-   
-        novoCadastro = TbCadastro(nome = nome, logradouro = logradouro,
-        nro = nro, bairro = bairro, cidade = cidade, cep = cep, 
-        telefone = telefone, email = email, senha = senha)
-        db.session.add(novoCadastro)
-        db.session.commit()
+
+        with app.app_context():
+            novoCadastro = TbCadastro(nome = nome, logradouro = logradouro,
+            nro = nro, bairro = bairro, cidade = cidade, cep = cep, 
+            telefone = telefone, email = email, senha = senha)
+            db.session.add(novoCadastro)
+            db.session.commit()
         flash("Cadastro realizado com sucesso!")
         return render_template("cadastro.html")
 
     return render_template("cadastro.html")
-
 
 
 @app.route("/login.html", methods=['GET', 'POST'])

@@ -8,7 +8,7 @@ PARA RODAR O BANCO LOCALMENTE:
 
     - Abra o cmd e execute o seguinte comando: pip3.exe install mysqlclient
     (será necessário, se não tiver o mysqsl instalado, configurar o host, user e password.
-    Nesse caso, o password e user usando no projeto é 'root', caso queira escolher outro de sua
+    Nesse caso, o password e user usado no projeto é 'root', caso queira escolher outro de sua
     preferência, será necessário setar essas informações no set up do banco aqui na aplicação).
 
     - baixe também o conector do mysql com o seguinte comando: pip install mysql-connector-python==8.0.28
