@@ -49,8 +49,7 @@ class Banco:
             CREATE TABLE `tb_produtos` (
                 `id` int(11) NOT NULL AUTO_INCREMENT,
                 `nome_prod` varchar(50) NOT NULL,
-                `desc_prod` varchar(500) NOT NULL,
-                `preco_prod` numeric(10, 2) NOT NULL,
+                `desc_prod` varchar(200) NOT NULL,
                 `qtd_prod` int(5) NOT NULL,
                 PRIMARY KEY (`id`)                
             ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;''')
@@ -62,7 +61,6 @@ class Banco:
                 `id` int(11) NOT NULL AUTO_INCREMENT,
                 `nome_cliente` varchar(50) NOT NULL,
                 `desc_ped` varchar(200) NOT NULL,
-                `preco_ped` numeric(10, 2) NOT NULL,
                 PRIMARY KEY (`id`)                
             ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;''')
 

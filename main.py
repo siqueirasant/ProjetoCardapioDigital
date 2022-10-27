@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 from pydoc import cli
 from re import template
 from flask import Flask, request, render_template, flash, redirect
@@ -9,6 +10,10 @@ from produtos import TbProdutos
 produtos = TbProdutos()
 clientes = TbCadastro()
 pedidos = TbPedidos()
+=======
+from flask import Flask, request, render_template, flash, redirect
+from cadastros import app, db, TbCadastro
+>>>>>>> a384cfd6123f5085bcfca0569341f3386db8ba31
 
 @app.route("/")
 def home():
@@ -45,6 +50,7 @@ def cadastrar_cliente():
         senha = request.form['inputSenha']
 
         with app.app_context():
+<<<<<<< HEAD
             cadastro = clientes.query.filter_by(email = email).first()
         if cadastro:
             flash('Usuario já cadastrado')
@@ -61,6 +67,19 @@ def cadastrar_cliente():
                 email=email,
                 senha=senha
             )
+=======
+            cadastro = TbCadastro.query.filter_by(email = email).first()
+        if cadastro:
+            flash('Usuario já cadastrado')
+            return render_template("cadastro.html")
+
+        with app.app_context():
+            novoCadastro = TbCadastro(nome = nome, logradouro = logradouro,
+            nro = nro, bairro = bairro, cidade = cidade, cep = cep, 
+            telefone = telefone, email = email, senha = senha)
+            db.session.add(novoCadastro)
+            db.session.commit()
+>>>>>>> a384cfd6123f5085bcfca0569341f3386db8ba31
         flash("Cadastro realizado com sucesso!")
         return render_template("cadastro.html")
     return render_template("cadastro.html")
