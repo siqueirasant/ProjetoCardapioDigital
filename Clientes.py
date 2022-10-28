@@ -26,9 +26,11 @@ class TbCadastro (db.Model):
         db.session.commit()
         print("Cadastro realizado com sucesso")
     
-    def mostra_clientes(nome):
-        cliente = TbCadastro.query.filter_by(nome = nome).first()
-        return cliente
+    def mostra_cliente(nome):
+        return TbCadastro.query.filter_by(nome = nome).first()
+
+    def mostra_todos():
+        return TbCadastro.query.all()
     
     def atualiza_cliente (id, nome, logradouro, nro, bairro, cidade, cep, telefone, email, senha):
         cliente = TbCadastro.query.filter_by(id = id).first()
@@ -49,5 +51,5 @@ class TbCadastro (db.Model):
     def deleta_cliente(id):
         TbCadastro.query.filter_by(id=id).delete()
         db.session.commit()
-        return print("Cadastro deletado com sucesso")
+        return print("Cadastro deletado com sucesso!")
 

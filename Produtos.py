@@ -1,5 +1,4 @@
-from logging import PercentStyle
-from main import app, db
+from main import db
 
 
 # Classe que alimenta a tabela produtos
@@ -21,14 +20,25 @@ class TbProdutos(db.Model):
         db.session.commit()
 
 
-    # Função que consulta os produtos
-    def consultar_produto(self):
-        pass
+    def mostra_todos():
+        return TbProdutos.query.all()
 
-    # Função que altera o cadastro do produto
-    def alterar_produto(self):
-        pass
+    def mostra_produto(nome):
+        return TbProdutos.query.filter_by(nome_prod = nome).first()
+
+    def atualiza_produto(id, nome, desc, qtd, preco):
+        produto = TbProdutos.query.filter_by(id = id).first()
+        produto.nome_prod = nome
+        produto.desc_prod = desc
+        produto.qtd_prod = qtd
+        produto.preco_prod = preco
+
+        db.session.add(produto)
+        db.session.commit()
+        return print("Produto " + produto.nome_prod + " atualizado com sucesso")
 
     # Função que deleta o cadastro do produto
-    def excluir_produto(self):
-        pass
+    def deleta_produto(id):
+        TbProdutos.query.filter_by(id = id).delete()
+        db.session.commit()
+        return print("Produto deletado com sucesso!")
