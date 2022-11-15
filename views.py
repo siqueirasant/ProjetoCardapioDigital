@@ -43,46 +43,71 @@ def cadastrar_cliente():
         senha = request.form['inputSenha']
 
         with app.app_context():
-            cadastro = TbCadastro.query.filter_by(email = email).first()
+            cadastro = TbCadastro.mostra_cliente(email=email)
         if cadastro:
-            flash('Usuario já cadastrado')
+            flash('Usuario já cadastrado!')
             return render_template("cadastro.html")
 
         with app.app_context():
             TbCadastro.cadastra_cliente(nome, logradouro, nro, bairro, cidade, cep, telefone, email, senha)
-            cliente = TbCadastro.mostra_clientes(nome)
+            cliente = TbCadastro.mostra_cliente(email)
             print(cliente)
-        flash("Cadastro realizado com sucesso!")
-        return render_template("cadastro.html")
-
+        #flash("Cadastro realizado com sucesso!")
+        return render_template("encomenda.html")
     return render_template("cadastro.html")
 
 
-@app.route("/login.html", methods=['GET', 'POST'])
-def login():
-    return render_template("login.html")
-
-
-@app.route("/autenticar", methods=['POST'])
-def autenticar ():
-    email = request.form['inputEmail']
-    senha = request.form['inputSenha']
-    usuario = TbCadastro.query.filter_by(senha = senha, email = email).first()
-    db.session.commit()
-    if usuario:
-        flash("Login realizado com sucesso")
+@app.route("/login.html", methods=['GET','POST'])
+def autenticar():
+    if request.method == "POST":
+        email = request.form['inputEmail']
+        senha = request.form['inputSenha']
+        with app.app_context():
+            usuario = TbCadastro.autentica_cliente(email, senha)
+        if usuario:
+            #flash("Login realizado com sucesso!")
+            return redirect("encomenda.html")
+        flash("Senha ou email incorretos.")
         return redirect("/login.html")
-    
-    flash("Senha ou email incorretos")
-    return redirect("/login.html")
-    
-"""
-@app.route("/atualizar", methods=["PUT"])
+    return render_template("login.html")    
+
+
+@app.route("/perfil.html", methods=["GET","POST"])
 def atualizar_dados_cliente():
-    pass
+    if request.method == "POST":
 
+        nome = request.form['inputNome']
+        logradouro = request.form['inputRua']
+        nro = request.form['inputNumero']
+        bairro = request.form['inputBairro']
+        cidade = request.form['inputCidade']
+        cep = request.form['inputCEP']
+        telefone = request.form['inputTelefone']
+        email = request.form['inputEmail']
+        senha = request.form['inputSenha']
+        
+        consulta = TbCadastro.mostra_cliente(email=email)
+        if consulta:
+            with app.app_context():
+                cliente = TbCadastro.atualiza_cliente(nome, logradouro, nro, bairro, cidade, cep, telefone, email, senha)
+                print(f'cliente: {cliente}')
+            flash("Cadastro alterado com sucesso!")
+            return redirect("atualizar.html")
+        else:
+            flash("Cadastro não encontrado.")
+            return redirect("perfil.html")
+    return render_template("perfil.html")
 
-@app.rout("/exibirPedido", methods=["GET"])
-def exibir_dados_pedido():
-    pass
-"""
+@app.route("/deletar.html", methods=["GET", "POST"])
+def excluir_dados_cliente():
+    if request.method == "POST":
+        email = request.form['inputEmail']
+        with app.app_context():
+            cad = TbCadastro.deleta_cliente(email)
+        if cad == 0:
+            flash("Cadastro não encontrado.")
+        else:
+            flash("Cadastro excluído com sucesso.")
+        return redirect("deletar.html")
+    return render_template("deletar.html")
+
