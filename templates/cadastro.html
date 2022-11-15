@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="static/imagens/favicon.ico" type="image/x-icon">
+    <title>Confeitaria Cíntia Lemos</title>
+    <!-- Carrega uma biblioteca de ícones para mostrar um menu de barras quando a página for exibida em telas pequenas-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="static/css/cadastro.css">
+    <script type="text/javascript" src="static\js\menu.js"></script>
+    <script type="text/javascript" src="static\js\cadastro.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <div id="imgLogo">
+            <a href="/">
+                <img src="static/imagens/logo-html-250.png" alt="logo1" class='img_header'>
+            </a>
+        </div>
+    </header>
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <ul id="messages" class="list-unstyled">
+        {% for message in messages %}
+        <li class="alert alert-success">{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    {% endwith %}
+    <form id="registerForm" , method="POST">
+        <div id="divCentral">
+            <h1>Cadastre-se</h1>
+            <div id="registerCentral">
+                <div id="registerLeftSide">
+                    <div id="divNome">
+                        <label for="inputNome" class="form-label">Nome:</label>
+                        <input type="text" class="form-control" id="inputNome" name="inputNome"
+                            aria-describedby="nomeHelp" required>
+                    </div>
+                    <div id="divCEP">
+                        <label for="inputCEP" class="form-label">CEP:</label>
+                        <input type="number" min="0" max="99999999" class="form-control" id="inputCEP" name="inputCEP"
+                            aria-describedby="CEPHelp" required onblur="pesquisacep(this.value);">
+                    </div>
+                    <div id="divRua">
+                        <label for="inputRua" class="form-label">Rua:</label>
+                        <input type="text" class="form-control" id="inputRua" name="inputRua" aria-describedby="ruaHelp"
+                            required>
+                    </div>
+                    <div id="divCidade">
+                        <label for="inputCidade" class="form-label">Cidade:</label>
+                        <input type="text" class="form-control" id="inputCidade" name="inputCidade"
+                            aria-describedby="cidadeHelp" required>
+                    </div>
+                    <div id="divBairro">
+                        <label for="inputBairro" class="form-label">Bairro:</label>
+                        <input type="text" class="form-control" id="inputBairro" name="inputBairro"
+                            aria-describedby="bairroHelp" required>
+                    </div>
+                </div>
+                <div id="registerRightSide">
+                    <div id="divNumero">
+                        <label for="inputNumero" class="form-label">Numero:</label>
+                        <input type="number" min="0" max="99999" class="form-control" id="inputNumero"
+                            name="inputNumero" aria-describedby="numeroHelp" required>
+                    </div>
+                    <div id="divTelefone">
+                        <label for="inputTelefone" class="form-label">Telefone:</label>
+                        <input type="text" class="form-control" id="inputTelefone" name="inputTelefone"
+                            aria-describedby="telefoneHelp" required>
+                    </div>
+                    <div id="divEmail">
+                        <label for="exampleInputEmail1" class="form-label">Email:</label>
+                        <input type="email" class="form-control" id="inputEmail" name="inputEmail"
+                            aria-describedby="emailHelp" required>
+                    </div>
+                    <div id="divSenha">
+                        <label for="inputSenha" class="form-label">Senha:</label>
+                        <input type="text" class="form-control" id="inputSenha" name="inputSenha"
+                            aria-describedby="senhaHelp" required>
+                    </div>
+                    <div id="divSenha">
+                        <label for="inputConfirmSenha" class="form-label">Confimar Senha:</label>
+                        <input type="text" class="form-control" id="inputConfirmSenha" name="inputConfirmSenha"
+                            aria-describedby="confirmSenhaHelp" required>
+                    </div>
+                </div>
+            </div>
+            <div id="bottom">
+                <button id="btnLogar" type="submit" class="">Cadastrar</button>
+                <div onmouseover="logar()" onmouseout="logarReset()" id="divLogin">
+                    <a id="linkLogin" href="login.html">Já possui uma conta?</a>
+                    <a id="linkLoginHover" href="login.html">Log-in</a>
+                </div>
+            </div>
+        </div>
+    </form>
+
+<<<<<<< HEAD:confeitaria-webapi/cadastro.html
+=======
+
+>>>>>>> 548dd9be7742096aee1afa5a8a8e589f8f4b4d28:templates/cadastro.html
+</body>
+
+</html>
