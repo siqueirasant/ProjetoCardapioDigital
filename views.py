@@ -6,11 +6,17 @@ from Clientes import TbCadastro
 def home():
     return render_template("index.html")
 
-
 @app.route("/sobre.html")
 def sobre():
     return render_template("sobre.html")
 
+@app.route("/perfil.html")
+def perfil():
+    return render_template("perfil.html")
+
+@app.route("/carrinhoPage.html")
+def carrinho():
+    return render_template("carrinhoPage.html")
 
 @app.route("/contato.html")
 def contato():
