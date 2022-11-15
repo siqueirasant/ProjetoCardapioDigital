@@ -1,7 +1,5 @@
 from main import db
 
-
-# Classe que alimenta a tabela de pedidos
 class TbPedidos(db.Model):
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     nome_cliente = db.Column(db.String, nullable = False)
@@ -35,7 +33,6 @@ class TbPedidos(db.Model):
         db.session.commit()
         return print("Pedido de " + pedido.nome_cliente + " atualizado com sucesso")
 
-    # Função que deleta o cadastro do produto
     def deleta_pedido(id):
         TbPedidos.query.filter_by(id = id).delete()
         db.session.commit()
