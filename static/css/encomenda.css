@@ -149,3 +149,31 @@ body {
     display: table;
     clear: both;
   }
+
+.Container-produtos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    align-items: center;
+    text-align: center;
+    margin-top: 3rem;
+    
+}
+
+.Container-produtos img:hover {
+    transform: scale(0.9) translateY(-5px);
+    cursor: pointer;
+    transition: 0.3s;
+
+}
+
+.produto img {
+    width: 250px;
+    height: 250px;
+}
+
+.produto {
+    background-color: #ffd9cc;
+    color: #391313;
+}
