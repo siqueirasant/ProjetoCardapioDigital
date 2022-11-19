@@ -23,8 +23,8 @@ class TbProdutos(db.Model):
     def mostra_todos():
         return TbProdutos.query.all()
 
-    def mostra_produto(nome):
-        return TbProdutos.query.filter_by(nome_prod = nome).first()
+    def mostra_produto(id):
+        return TbProdutos.query.filter_by(id = id).first()
 
     def atualiza_produto(id, nome, desc, qtd, preco):
         produto = TbProdutos.query.filter_by(id = id).first()

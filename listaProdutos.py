@@ -37,6 +37,7 @@ produtos = {
         "Preço":"640.00"
     }, 
     "kit_festa_5": {
+        "imagem": "https://docs.google.com/uc?id=1TVvxK_JgkPbfk4tYErrJO5012ZgVAJtC",
         "nome": "kit_festa_5",
         "descricao":"1 Bolo de Chocolate com recheio e cobertuda de ganache ao leite. " 
                     "1000 salgados fritos (250 coxinhas, 250 bolinhas de queijo, 250 kibes, 250 risoles de carne) "

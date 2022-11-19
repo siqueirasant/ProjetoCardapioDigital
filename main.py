@@ -9,5 +9,7 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+mysqlconnector://root:root@localh
 db = SQLAlchemy(app)
 
 from views import *
+from produtos_view import *
+
 if __name__ == '__main__':
     app.run(debug=True)
