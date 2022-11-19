@@ -24,16 +24,16 @@ class TbCadastro (db.Model):
             senha = senha)
         db.session.add(novo_cliente)
         db.session.commit()
-        print("Cadastro realizado com sucesso")
+        print("Cadastro realizado com sucesso!")
     
-    def mostra_cliente(nome):
-        return TbCadastro.query.filter_by(nome = nome).first()
+    def mostra_cliente(email):
+        return TbCadastro.query.filter_by(email = email).first()
 
     def mostra_todos():
         return TbCadastro.query.all()
     
-    def atualiza_cliente (id, nome, logradouro, nro, bairro, cidade, cep, telefone, email, senha):
-        cliente = TbCadastro.query.filter_by(id = id).first()
+    def atualiza_cliente (nome, logradouro, nro, bairro, cidade, cep, telefone, email, senha):
+        cliente = TbCadastro.query.filter_by(email = email).first()
         cliente.nome = nome
         cliente.logradouro = logradouro
         cliente.nro = nro
@@ -45,11 +45,20 @@ class TbCadastro (db.Model):
         cliente.senha = senha
         db.session.add(cliente)
         db.session.commit()
-        return print("Atualização de cadastro de realizado com sucesso")
+        return print("Atualização de cadastro realizado com sucesso!")
 
 
-    def deleta_cliente(id):
-        TbCadastro.query.filter_by(id=id).delete()
+    def deleta_cliente(email):
+        cad = TbCadastro.query.filter_by(email=email).delete()
+        print(cad)
+        if cad != 1:
+            return 0 #print("Cadastro não encontrado.")
+        else:
+            db.session.commit()
+            return 1 #print("Cadastro deletado com sucesso!")
+
+
+    def autentica_cliente(email, senha):
+        usuario = TbCadastro.query.filter_by(senha = senha, email = email).first()
         db.session.commit()
-        return print("Cadastro deletado com sucesso!")
-
+        return usuario

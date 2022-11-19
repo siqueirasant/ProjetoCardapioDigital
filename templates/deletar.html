@@ -1,0 +1,55 @@
+ <!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="static/imagens/favicon.ico" type="image/x-icon">
+    <title>Confeitaria Cíntia Lemos</title>
+	<!-- Carrega uma biblioteca de ícones para mostrar um menu de barras quando a página for exibida em telas pequenas-->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<!-- CSS only -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+	<!-- JavaScript Bundle with Popper -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+	<link rel="stylesheet" type="text/css" href="static/css/login.css">
+    <script type="text/javascript" src="static\js\menu.js"></script>
+    <script type="text/javascript" src="static\js\login.js"></script>
+</head>
+
+<body>
+
+    <header>
+        <div id="imgLogo">
+            <a href="/">
+                <img src="static/imagens/logo-html-250.png" alt="logo1" class='img_header'>
+            </a>
+        </div>
+    </header>
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <ul id="messages" class="list-unstyled">
+        {% for message in messages %}
+        <li class="alert alert-success">{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    {% endwith %}
+    <div class="" id="divCentral">
+        <form method="POST" id="login">
+            <h1>Remover Cadastro</h1>
+            <div id="divEmail">
+                <label for="exampleInputEmail1" class="form-label">Email</label>
+                <input type="email" class="form-control" id="inputEmail" name="inputEmail" aria-describedby="emailHelp" required>
+            </div>
+            <div id="bottom">
+                <button id="btnRemover" type="submit" class="">Remover</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+
+</body>
+</html>

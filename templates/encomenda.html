@@ -7,26 +7,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="static/imagens/favicon.ico" type="image/x-icon">
     <title>Confeitaria Cíntia Lemos</title>
-	<!-- Carrega uma biblioteca de ícones para mostrar um menu de barras quando a página for exibida em telas pequenas-->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<!-- CSS only -->
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
-	<!-- JavaScript Bundle with Popper -->
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
-	<link rel="stylesheet" type="text/css" href="static/css/encomenda.css">
+    <!-- Carrega uma biblioteca de ícones para mostrar um menu de barras quando a página for exibida em telas pequenas-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="static/css/encomenda.css">
     <script type="text/javascript" src="static\js\menu.js"></script>
     <!-- head do carrinho -->
-	<link rel="stylesheet" href="static/css/carrinhoMenu.css"> 
-	<script type="text/javascript" src="static\js\carrinho.js"></script>
+    <link rel="stylesheet" href="static/css/carrinhoMenu.css">
+    <script type="text/javascript" src="static\js\carrinho.js"></script>
 </head>
 
 <body>
 
     <header>
-        <a href="/">	
+        <a href="/">
             <img src="static/imagens/logo-html-250.png" alt="logo1" class='img_header'>
         </a>
-        
+
         <nav>
             <div class="container-lg">
                 <div class='menuGeral' id='menuGeralId'>
@@ -53,11 +56,44 @@
 
 
     <section>
+        <div class="Container-produtos">
+            <div class="produto">
+                <img src="static/imagens/boloMenu1.png" alt="">
+                <p>Bolo com cobertura de chantilly</p>
+                <p>1 kg</p>
+                <h5>R$ 70,00</h5>
+                <ion-icon name="cart-outline"></ion-icon>
+            </div>
 
+
+            <div class="produto">
+                <img src="static/imagens/boloMenu2.png" alt="">
+                <p>Bolo com cobertura de ganache</p>
+                <p>1 kg</p>
+                <h5>R$ 90,00</h5>
+                <ion-icon name="cart-outline"></ion-icon>
+            </div>
+
+            <div class="produto">
+                <img src="static/imagens/docesMenu1.png" alt="">
+                <p>Doces tradicionais</p>
+                <p>50 unid. de 15g cada</p>
+                <h5>R$ 50,00</h5>
+                <ion-icon name="cart-outline"></ion-icon>
+            </div>
+
+            <div class="produto">
+                <img src="static/imagens/kitMenu1.png" alt="">
+                <p>Kit festa para 20 pessoas</p>
+                <p>Bolo + doces + salgados</p>
+                <h5>R$ 360,00</h5>
+                <ion-icon name="cart-outline"></ion-icon>
+            </div>
     </section>
 
     <!-- body do carrinho -->
-    <div id="carrinhoDivIcon" onclick="clickCarrinho()" onmouseover="hoverOnCarrinho()" onmouseout="hoverOutCarrinho()" class="">
+    <div id="carrinhoDivIcon" onclick="clickCarrinho()" onmouseover="hoverOnCarrinho()" onmouseout="hoverOutCarrinho()"
+        class="">
         <img id="imgCarrinho" src="static/imagens/carrinhoCompras.png" alt="">
         <iframe id="iframeCarrinho" scroling="no" src="carrinhoPage.html" frameborder="0"></iframe>
         <div id="divbtnBottom">
@@ -70,6 +106,8 @@
         <p>Confeitaria Cíntia Lemos™ desde 2016. Todos os direitos reservados.</p>
     </footer>
 
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>
 
 </html>
