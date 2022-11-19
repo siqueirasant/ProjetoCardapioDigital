@@ -2,16 +2,17 @@ from main import db
 
 class TbPedidos(db.Model):
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
-    nome_cliente = db.Column(db.String, nullable = False)
-    desc_ped = db.Column(db.String, nullable = False)
-    preco_ped = db.Column(db.Numeric, nullable = False)
+    nome_prod = db.Column(db.String, nullable = False)
+    desc_prod = db.Column(db.String, nullable = False)
+    preco_prod = db.Column(db.Numeric, nullable = False)
+    qtd_prod = db.Column(db.Numeric, nullable = False)
 
-    def cadastra_pedido(nome, desc, preco):
+    def cadastra_pedido(nome, desc, qtd, preco):
         novoPedido = TbPedidos(
-            nome_cliente = nome, 
-            desc_ped = desc,
-            preco_ped = preco
-        )
+            nome_prod = nome, 
+            desc_prod = desc,
+            qtd_prod = qtd,
+            preco_prod = preco)
         db.session.add(novoPedido)
         db.session.commit()
 
@@ -20,18 +21,19 @@ class TbPedidos(db.Model):
     def mostra_todos():
         return TbPedidos.query.all()
         
-    def mostra_pedido(nome):
-        return TbPedidos.query.filter_by(nome_cliente = nome).first()
+    def mostra_pedido(id):
+        return TbPedidos.query.filter_by(id = id).first()
 
-    def atualiza_pedido(id, nome, desc,preco):
+    def atualiza_pedido(id, nome, desc, qtd, preco):
         pedido = TbPedidos.query.filter_by(id = id).first()
-        pedido.nome_cliente = nome
-        pedido.desc_ped = desc
-        pedido.preco_ped = preco
+        pedido.nome_prod = nome
+        pedido.desc_prod = desc
+        pedido.qtd_prod = qtd
+        pedido.preco_prod = preco
 
         db.session.add(pedido)
         db.session.commit()
-        return print("Pedido de " + pedido.nome_cliente + " atualizado com sucesso")
+        return print("Pedido de " + pedido.nome_prod  + " atualizado com sucesso")
 
     def deleta_pedido(id):
         TbPedidos.query.filter_by(id = id).delete()

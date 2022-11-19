@@ -54,42 +54,33 @@
             </div>
         </nav>
     </header>
-    <content>
-        <div class="container-lg">
-            <div class="containerDivCentral">
-                <div id="divCentral">
-                    <div id="registerCentral">
-                        <div id="registerLeftSide">
-                            <div id="" class="containerPrincipal">
-                                {% for produto in produtos %}
-                                <hr>
-                                <div class="productSample">
-                                    <div class="productDescription">
-                                        <div id="divImgLimitador" class="bg-dark d-flex justify-content-center">
-                                            <img src="https://docs.google.com/uc?id=1TVvxK_JgkPbfk4tYErrJO5012ZgVAJtC"
-                                                class="card-img-top img-mainCartao" alt="...">
-                                        </div>
-                                        <h1>{{produto.nome_prod}}</h1>
-                                        <p>{{produto.desc_prod}}</p>
-                                        <h4>Quantidade: {{produto.qtd_prod}}</h4>
-                                        <h4>Preço: {{produto.preco_prod}}</h4>
-                                    </div>
-                                    <div class="productButtons">
-                                        <a class="btn btn-light" href="{{ url_for('editar', id=produto.id) }}"
-                                            role="button">Editar</a>
-                                        <a class="btn btn-light" href="{{ url_for('deletar', id=produto.id) }}"
-                                            role="button">Deletar</a>
-                                    </div>
-                                </div>
-                                <hr>
-                            </div>
-                            {% endfor %}
-                        </div>
-                    </div>
-                </div>
+    <div class="container-lg">
+    <div id="" class="containerPrincipal">
+        {% for pedido in pedidos %}
+        <div class="productSample">
+            <div class="productDescription">
+                <h1>{{pedido.nome_prod}}</h1>
+                <p>{{pedido.desc_prod}}</p>
+                <p>Quantidade: {{pedido.qtd_prod}}</p>
+                <p>Preço: {{pedido.preco_prod}}</p>
+            </div>
+            <div class="productButtons">
+                <a class="btn btn-light" href="{{ url_for('editar_carrinho', id=pedido.id) }}"
+                role="button">Atualizar</a>
+                <a class="btn btn-light" href="{{ url_for('deleta_carrinho', id=pedido.id) }}"
+                role="button">Deletar</a>
             </div>
         </div>
-    </content>
+        <hr>
+        {% endfor %}
+
+        <div class="text-bg-light p-3">
+            <h3>Total: {{total}}</h3>
+            <a class="btn btn-dark" href="{{ url_for('resumo_pedido') }}"
+            role="button">Finalizar Pedido</a>
+        </div>
+    </div>
+    </div>
 
     <footer class="footer">
         <p>Confeitaria Cíntia Lemos™ desde 2016. Todos os direitos reservados.</p>

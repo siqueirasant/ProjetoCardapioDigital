@@ -54,42 +54,35 @@
             </div>
         </nav>
     </header>
-    <content>
-        <div class="container-lg">
-            <div class="containerDivCentral">
-                <div id="divCentral">
-                    <div id="registerCentral">
-                        <div id="registerLeftSide">
-                            <div id="" class="containerPrincipal">
-                                {% for produto in produtos %}
-                                <hr>
-                                <div class="productSample">
-                                    <div class="productDescription">
-                                        <div id="divImgLimitador" class="bg-dark d-flex justify-content-center">
-                                            <img src="https://docs.google.com/uc?id=1TVvxK_JgkPbfk4tYErrJO5012ZgVAJtC"
-                                                class="card-img-top img-mainCartao" alt="...">
-                                        </div>
-                                        <h1>{{produto.nome_prod}}</h1>
-                                        <p>{{produto.desc_prod}}</p>
-                                        <h4>Quantidade: {{produto.qtd_prod}}</h4>
-                                        <h4>Preço: {{produto.preco_prod}}</h4>
-                                    </div>
-                                    <div class="productButtons">
-                                        <a class="btn btn-light" href="{{ url_for('editar', id=produto.id) }}"
-                                            role="button">Editar</a>
-                                        <a class="btn btn-light" href="{{ url_for('deletar', id=produto.id) }}"
-                                            role="button">Deletar</a>
-                                    </div>
-                                </div>
-                                <hr>
-                            </div>
-                            {% endfor %}
+
+    <div class="offcanvas offcanvas-start show" tabindex="-1" id="offcanvas" aria-labelledby="offcanvasLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasLabel">Aqui concluímos sua reserva</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            Se atente, sua reserva somente será garantida após envio de comprovante de pagamento
+            pelo WhatsApp
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">Detalhes do pedido</h5>
+                    {% for pedido in pedidos %}
+                    <li class="list-group-item">{{pedido.nome_prod}}</li>
+                    {% endfor %}
+                    <li class="list-group-item">Total: {{total}}</li>
+                    <div class="w-75 mt-3">
+                        <div class="p-2">
+                            <a class="btn btn-success" href="https://api.whatsapp.com/send?phone=5511947960382&text=Ol%C3%A1!%20Encontrei%20seu%20contato%20no%20site%20da%20confeitaria"
+                                target="_blank" class="social_links">
+                               <p>Envie seu comprovante.</p>
+                            </a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </content>
+    </div>
+
 
     <footer class="footer">
         <p>Confeitaria Cíntia Lemos™ desde 2016. Todos os direitos reservados.</p>

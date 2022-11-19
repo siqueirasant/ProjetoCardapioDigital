@@ -19,62 +19,25 @@
 <!-- 670 -->
 <body>
 
-    <div id="" class="containerPrincipal">
-        <div class="productSample">
-            <div class="productDescription">
-                <h1>Produto tal</h1>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Totam minus quod impedit.</p>
+    <div class="container-lg">
+        <div id="" class="containerPrincipal">
+            {% for pedido in pedidos %}
+            <div class="productSample">
+                <div class="productDescription">
+                    <h1>{{pedido.nome_prod}}</h1>
+                    <p>{{pedido.desc_prod}}</p>
+                    <p>Quantidade: {{pedido.qtd_prod}}</p>
+                    <p>Preço: {{pedido.preco_prod}}</p>
+                </div>
+                <div class="productButtons">
+                    <a class="btn btn-light" href="{{ url_for('carrinho') }}"
+                    role="button">Ir ao carrinho</a>
+                </div>
             </div>
-            <div class="productButtons">
-                <button>Adicionar</button>
-                <button>Remover</button>
-            </div>
+            <hr>
+            {% endfor %}
+            
         </div>
-        <hr>
-        <div class="productSample">
-            <div class="productDescription">
-                <h1>Produto tal</h1>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Totam minus quod impedit.</p>
-            </div>
-            <div class="productButtons">
-                <button>Adicionar</button>
-                <button>Remover</button>
-            </div>
         </div>
-        <hr>
-        <div class="productSample">
-            <div class="productDescription">
-                <h1>Produto tal</h1>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Totam minus quod impedit.</p>
-            </div>
-            <div class="productButtons">
-                <button>Adicionar</button>
-                <button>Remover</button>
-            </div>
-        </div>
-        <hr>
-        <div class="productSample">
-            <div class="productDescription">
-                <h1>Produto tal</h1>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Totam minus quod impedit.</p>
-            </div>
-            <div class="productButtons">
-                <button>Adicionar</button>
-                <button>Remover</button>
-            </div>
-        </div>
-        <hr>
-        <div class="productSample">
-            <div class="productDescription">
-                <h1>Produto tal</h1>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Totam minus quod impedit.</p>
-            </div>
-            <div class="productButtons">
-                <button>Adicionar</button>
-                <button>Remover</button>
-            </div>
-        </div>
-    </div>
-
 </body>
 </html>

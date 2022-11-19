@@ -60,9 +60,10 @@ class Banco:
         TABLES['tb_pedidos'] = ('''
             CREATE TABLE `tb_pedidos` (
                 `id` int(11) NOT NULL AUTO_INCREMENT,
-                `nome_cliente` varchar(50) NOT NULL,
-                `desc_ped` varchar(200) NOT NULL,
-                `preco_ped` double NOT NULL,
+                `nome_prod` varchar(50) NOT NULL,
+                `desc_prod` varchar(400) NOT NULL,
+                `qtd_prod` int(5) NOT NULL,
+                `preco_prod` double NOT NULL,
                 PRIMARY KEY (`id`)                
             ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;''')
 
@@ -85,4 +86,4 @@ class Banco:
 
         cursor.close()
         conn.close()
-Banco().iniciaBanco()       
+#Banco().iniciaBanco()       

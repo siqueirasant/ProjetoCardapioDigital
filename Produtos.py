@@ -7,7 +7,7 @@ class TbProdutos(db.Model):
     nome_prod = db.Column(db.String, nullable = False)
     desc_prod = db.Column(db.String, nullable = False)
     preco_prod = db.Column(db.Numeric, nullable = False)
-    qtd_prod = db.Column(db.String, nullable = False)
+    qtd_prod = db.Column(db.Numeric, nullable = False)
 
     #Função de cadastro dos produtos para alimentar o banco de dados
     def cadastrar_produto(nome, desc, qtd, preco):

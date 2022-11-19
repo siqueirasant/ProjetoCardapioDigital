@@ -15,4 +15,4 @@ def popula_produto():
         except Exception as e:
             print(e)
 
-#popula_produto()
+popula_produto()

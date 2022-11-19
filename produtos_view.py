@@ -1,7 +1,6 @@
 from flask import render_template, request, redirect, session, flash, url_for
 from main import app, db
 from Produtos import *
-from listaProdutos import produtos
 
 
 @app.route("/produtos.html")

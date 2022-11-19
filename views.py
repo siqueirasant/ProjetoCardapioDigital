@@ -14,19 +14,10 @@ def sobre():
 def perfil():
     return render_template("perfil.html")
 
-@app.route("/carrinhoPage.html")
-def carrinho():
-    return render_template("carrinhoPage.html")
 
 @app.route("/contato.html")
 def contato():
     return render_template("contato.html")
-
-
-@app.route("/encomenda.html")
-def encomenda():
-    return render_template("encomenda.html")
-
 
 @app.route("/cadastro.html", methods=["GET", "POST"])
 def cadastrar_cliente():

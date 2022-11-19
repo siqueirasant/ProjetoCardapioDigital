@@ -39,6 +39,8 @@
                         <a href='encomenda.html' class="active">Faça sua encomenda</a>
                         <a href='contato.html'>Contato</a>
                         <a href='perfil.html'>Minha conta</a>
+                        <a href='produtos.html'>Produtos</a>
+                        <a href='carrinho.html'>Carrinho</a>
                         <a href="login.html" id="aEntreResponsivo">Entre</a>
                         <a href="cadastro.html" id="aCadastreResponsivo">Cadastre-se</a>
                         <a href="javascript:void(0);" class="icon" onclick="myFunction()">
@@ -53,44 +55,25 @@
             </div>
         </nav>
     </header>
-
-
-    <section>
+    <div class="row row-cols-3">
+        {% for produto in produtos %}
         <div class="Container-produtos">
-            <div class="produto">
-                <img src="static/imagens/boloMenu1.png" alt="">
-                <p>Bolo com cobertura de chantilly</p>
-                <p>1 kg</p>
-                <h5>R$ 70,00</h5>
-                <ion-icon name="cart-outline"></ion-icon>
-            </div>
-
 
             <div class="produto">
-                <img src="static/imagens/boloMenu2.png" alt="">
-                <p>Bolo com cobertura de ganache</p>
-                <p>1 kg</p>
-                <h5>R$ 90,00</h5>
-                <ion-icon name="cart-outline"></ion-icon>
+                <div class="col">
+                    <img src="static/imagens/boloMenu1.png" alt="">
+                    <p>{{produto.nome_prod}}</p>
+                    <p>{{produto.desc_prod}}</p>
+                    <h5>Preço: {{produto.preco_prod}}</h5>
+                    <ion-icon name="cart-outline"></ion-icon>
+                    <a class="btn btn-light" href="{{ url_for('cadastra_pedido', id=produto.id) }}"
+                    role="button">Adicionar ao carrinho</a>
+                    </ion-icon>
+                </div>
             </div>
-
-            <div class="produto">
-                <img src="static/imagens/docesMenu1.png" alt="">
-                <p>Doces tradicionais</p>
-                <p>50 unid. de 15g cada</p>
-                <h5>R$ 50,00</h5>
-                <ion-icon name="cart-outline"></ion-icon>
-            </div>
-
-            <div class="produto">
-                <img src="static/imagens/kitMenu1.png" alt="">
-                <p>Kit festa para 20 pessoas</p>
-                <p>Bolo + doces + salgados</p>
-                <h5>R$ 360,00</h5>
-                <ion-icon name="cart-outline"></ion-icon>
-            </div>
-    </section>
-
+        </div>
+        {% endfor %}
+    </div>
     <!-- body do carrinho -->
     <div id="carrinhoDivIcon" onclick="clickCarrinho()" onmouseover="hoverOnCarrinho()" onmouseout="hoverOutCarrinho()"
         class="">

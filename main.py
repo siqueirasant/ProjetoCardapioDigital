@@ -10,6 +10,7 @@ db = SQLAlchemy(app)
 
 from views import *
 from produtos_view import *
+from carrinho_view import *
 
 if __name__ == '__main__':
     app.run(debug=True)
