@@ -29,11 +29,14 @@ class TbCadastro (db.Model):
     def mostra_cliente(email):
         return TbCadastro.query.filter_by(email = email).first()
 
+    def mostra_cliente_por_id(id):
+        return TbCadastro.query.filter_by(id = id).first() 
+
     def mostra_todos():
         return TbCadastro.query.all()
     
-    def atualiza_cliente (nome, logradouro, nro, bairro, cidade, cep, telefone, email, senha):
-        cliente = TbCadastro.query.filter_by(email = email).first()
+    def atualiza_cliente (id, nome, logradouro, nro, bairro, cidade, cep, telefone, email, senha):
+        cliente = TbCadastro.query.filter_by(id=id).first()
         cliente.nome = nome
         cliente.logradouro = logradouro
         cliente.nro = nro
@@ -48,14 +51,10 @@ class TbCadastro (db.Model):
         return print("Atualização de cadastro realizado com sucesso!")
 
 
-    def deleta_cliente(email):
-        cad = TbCadastro.query.filter_by(email=email).delete()
-        print(cad)
-        if cad != 1:
-            return 0 #print("Cadastro não encontrado.")
-        else:
-            db.session.commit()
-            return 1 #print("Cadastro deletado com sucesso!")
+    def deleta_cliente(id):
+        TbCadastro.query.filter_by(id=id).delete()
+        db.session.commit()
+        return print("Cliente deletado com sucesso!")
 
 
     def autentica_cliente(email, senha):
